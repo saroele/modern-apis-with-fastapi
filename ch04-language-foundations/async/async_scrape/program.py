@@ -45,7 +45,7 @@ def main():
 
 async def get_title_range_old_version():
     # Please keep this range pretty small to not DDoS my site. ;)
-    for n in range(270, 280):
+    for n in range(270, 330):
         html = await get_html(n)
         title = get_title(html, n)
         print(Fore.WHITE + f"Title found: {title}", flush=True)
@@ -55,7 +55,7 @@ async def get_title_range():
     # Please keep this range pretty small to not DDoS my site. ;)
 
     tasks = []
-    for n in range(270, 280):
+    for n in range(270, 330):
         tasks.append((n, loop.create_task(get_html(n))))
 
     for n, t in tasks:
